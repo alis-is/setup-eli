@@ -1,0 +1,20 @@
+name: 'Setup eli environment'
+description: 'Setup a eli environment and add it to the PATH'
+author: 'alis.is'
+inputs:
+  eli-version:
+    description: 'The eli version to download (if necessary) and use. Supports semver spec and ranges.'
+  eli-version-file:
+    description: 'Path to the version file - any file with version string as content.'
+  architecture:
+    description: 'Target architecture for eli to use. Examples: x86, x64. Will use system architecture by default.'
+  token:
+    description: Used to auth octokit
+    default: ${{ github.server_url == 'https://github.com' && github.token || '' }}
+outputs:
+  eli-version:
+    description: 'The installed eli version. Useful when given a version range as input.'
+runs:
+  using: 'node16'
+  main: 'dist/setup/index.js'
+

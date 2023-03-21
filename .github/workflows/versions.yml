@@ -1,0 +1,60 @@
+name: Validate 'setup-eli'
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    paths-ignore:
+      - '**.md'
+  schedule:
+    - cron: 0 0 * * *
+
+jobs:
+  version:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup eli 0.29.0
+        uses: ./
+        with:
+          eli-version: 0.29.0
+      - name: Verify eli
+        run: eli -v
+
+  version-file:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v3
+      - name: create-version-file
+        run: |
+          echo "0.29.0" > VERSION_FILE
+      - name: Setup eli 0.29.0
+        uses: ./
+        with:
+          eli-version-file: VERSION_FILE
+      - name: Verify eli
+        run: eli -v
+
+  latest:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup latest eli
+        uses: ./
+      - name: Verify eli
+        run: eli -v
