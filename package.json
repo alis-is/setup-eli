@@ -1,6 +1,6 @@
 {
   "name": "setup-eli",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "description": "setup eli action",
   "main": "lib/setup-eli.js",
