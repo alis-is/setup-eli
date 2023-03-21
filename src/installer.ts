@@ -85,7 +85,11 @@ async function installEliVersion(
   const isWindows = os.platform() === 'win32';
   const tempDir = process.env.RUNNER_TEMP || '.';
   const fileName = isWindows ? path.join(tempDir, info.fileName) : undefined;
-  const downloadPath = await tc.downloadTool(info.downloadUrl, fileName, auth);
+  const downloadPath = await tc.downloadTool(
+    info.downloadUrl,
+    fileName,
+    authToken ? `token ${authToken}` : undefined
+  );
   const eliBinDir = path.join(path.dirname(downloadPath), 'eli');
   const eliBinPath = path.join(eliBinDir, `eli${path.extname(info.fileName)}`);
   // chmod +x eliBinPath
