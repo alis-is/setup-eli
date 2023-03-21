@@ -1,7 +1,7 @@
 # setup-eli
 
-[![Basic validation](https://github.com/actions/setup-eli/actions/workflows/basic-validation.yml/badge.svg)](https://github.com/alis-is/setup-eli/actions/workflows/basic-validation.yml)
-[![Validate 'setup-eli'](https://github.com/actions/setup-eli/actions/workflows/versions.yml/badge.svg)](https://github.com/alis-is/setup-eli/actions/workflows/versions.yml)
+[![Basic validation](https://github.com/alis-is/setup-eli/actions/workflows/basic-validation.yml/badge.svg)](https://github.com/alis-is/setup-eli/actions/workflows/basic-validation.yml)
+[![Validate 'setup-eli'](https://github.com/alis-is/setup-eli/actions/workflows/versions.yml/badge.svg)](https://github.com/alis-is/setup-eli/actions/workflows/versions.yml)
 
 This action sets up a eli environment for use in actions by:
 
