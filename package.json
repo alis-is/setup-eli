@@ -6,7 +6,7 @@
   "main": "lib/setup-eli.js",
   "type": "commonjs",
   "scripts": {
-    "build": "tsc && ncc build -o dist/setup src/setup-eli.ts --external encoding",
+    "build": "tsc && ncc build -o dist/setup src/setup-eli.ts --minify --external encoding",
     "format": "prettier --no-error-on-unmatched-pattern --config ./.prettierrc.js --write **/*.{ts,yml,yaml}",
     "format-check": "prettier --no-error-on-unmatched-pattern --config ./.prettierrc.js --check **/*.{ts,yml,yaml}",
     "lint": "eslint --config ./.eslintrc.js **/*.ts",

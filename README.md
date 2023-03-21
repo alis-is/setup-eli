@@ -6,7 +6,6 @@
 This action sets up a eli environment for use in actions by:
 
 - Optionally downloading and caching a version of eli by version and adding to `PATH`.
-- Registering problem matchers for error output.
 
 # Usage
 
