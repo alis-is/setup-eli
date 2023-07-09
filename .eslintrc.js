@@ -1,3 +1,4 @@
+// This is a reusable configuration file copied from https://github.com/actions/reusable-workflows/tree/main/reusable-configurations. Please don't make changes to this file as it's the subject of an automatic update.
 module.exports = {
   extends: [
     'eslint:recommended',
@@ -6,7 +7,7 @@ module.exports = {
     'eslint-config-prettier'
   ],
   parser: '@typescript-eslint/parser',
-  plugins: ['@typescript-eslint', 'eslint-plugin-jest'],
+  plugins: ['@typescript-eslint', 'eslint-plugin-node', 'eslint-plugin-jest'],
   rules: {
     '@typescript-eslint/no-require-imports': 'error',
     '@typescript-eslint/no-non-null-assertion': 'off',
@@ -18,7 +19,7 @@ module.exports = {
         'ts-ignore': 'allow-with-description'
       }
     ],
-    'no-console': 'warn',
+    'no-console': 'error',
     'yoda': 'error',
     'prefer-const': [
       'error',
@@ -27,7 +28,8 @@ module.exports = {
       }
     ],
     'no-control-regex': 'off',
-    'no-constant-condition': ['error', {checkLoops: false}]
+    'no-constant-condition': ['error', {checkLoops: false}],
+    'node/no-extraneous-import': 'error'
   },
   overrides: [
     {
@@ -37,6 +39,7 @@ module.exports = {
         'jest/no-standalone-expect': 'off',
         'jest/no-conditional-expect': 'off',
         'no-console': 'off',
+
       }
     }
   ],
